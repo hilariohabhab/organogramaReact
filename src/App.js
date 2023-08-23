@@ -2,17 +2,13 @@ import { useState } from "react";
 import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Formulario";
 import Timate from "./componentes/Timate";
-import { rankingInfo } from './componentes/Duplas/index';
-
+import { rankingInfo } from "./componentes/Duplas/index";
 
 function App() {
-
-
   const [jogadores, setJogadores] = useState([]);
   const aoNovoJogadorAdicionado = (jogador) => {
-    console.log(jogador)
-      setJogadores([...jogadores, jogador])
-  }
+    setJogadores([...jogadores, jogador]);
+  };
   return (
     <div className="App">
       <Banner />
@@ -27,7 +23,7 @@ function App() {
           corPrimaria={ranking.corPrimaria}
           corSecundaria={ranking.corSecundaria}
           jogadores={jogadores.filter(
-            jogador => ranking.nome === jogador.rank
+            (jogador) => ranking.nome === jogador.rank
           )}
         />
       ))}

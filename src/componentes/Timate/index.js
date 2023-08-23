@@ -10,7 +10,8 @@ const Timate = (props) => {
       <h3 style={borda}>{props.nome}</h3>
       <div className="jogadores">
         {props.jogadores.map((jogador) => (
-          <Jogador
+          <Jogador corDeFundo={props.corPrimaria}
+            key={jogador.nick}
             imagem={jogador.imagem}
             nome={jogador.nick}
             plataforma={jogador.plataforma}
