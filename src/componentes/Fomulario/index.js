@@ -4,16 +4,12 @@ import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 
-const Formulario = () => {
-  const [nick, setNick] = useState("");
-  const [plataformas, setPlataformas] = useState("");
-  const [imagem, setImagem] = useState("");
-  const [rank, setRank] = useState("");
+const Formulario = (props) => {
 
   const ranking = [
     "Bronze I",
-    "Bronze iI",
-    "Bronze iII",
+    "Bronze II",
+    "Bronze III",
     "Prata I",
     "Prata II",
     "Prata III",
@@ -37,9 +33,19 @@ const Formulario = () => {
 
   const plataforma = ["PS4 / PS5", "PC", "Xbox", "Nintendo"];
 
-  const aoSalvar = (e) => {
-    e.preventDefault();
-    console.log(nick, plataformas, imagem, rank);
+  const [nick, setNick] = useState("");
+  const [plataformas, setPlataformas] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [rank, setRank] = useState("");
+
+  const aoSalvar = (evento) => {
+    evento.preventDefault();
+    props.aoNovoJogadorAdicionado({
+      nick,
+      plataforma,
+      imagem,
+      rank,
+    });
   };
 
   return (
