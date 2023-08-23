@@ -4,7 +4,7 @@ function Banner() {
     return (
       <header className="banner">
         <img
-          src="/imagens/banner.png"
+          src="/imagens/rocket-banner.jpg"
           alt="banner principal da pagina do organo"
           
         />

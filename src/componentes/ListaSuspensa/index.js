@@ -7,7 +7,7 @@ const ListaSuspensa = (props) => {
   return (
     <div className="lista-suspensa">
       <label>{props.label}</label>
-      <select>
+      <select onChange={evento => props.aoAlterado(evento.target.value)} required={props.obrigatorio} value={props.valor} >
         {opcoesComPlaceholder.map((item, index) => (
           <option
             key={item}
