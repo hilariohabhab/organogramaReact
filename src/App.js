@@ -26,6 +26,9 @@ function App() {
           nome={ranking.nome}
           corPrimaria={ranking.corPrimaria}
           corSecundaria={ranking.corSecundaria}
+          jogadores={jogadores.filter(
+            jogador => ranking.nome === jogador.rank
+          )}
         />
       ))}
     </div>

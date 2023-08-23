@@ -6,12 +6,10 @@ import "./Formulario.css";
 
 const Formulario = (props) => {
 
-
-
-  const plataforma = ["PS4 / PS5", "PC", "Xbox", "Nintendo"];
+  const plataformaOpcoes = ["PS4 / PS5", "PC", "Xbox", "Nintendo"];
 
   const [nick, setNick] = useState("");
-  const [plataformas, setPlataformas] = useState("");
+  const [plataforma, setPlataforma] = useState("");
   const [imagem, setImagem] = useState("");
   const [rank, setRank] = useState("");
 
@@ -23,6 +21,10 @@ const Formulario = (props) => {
       imagem,
       rank,
     });
+    setNick('')
+    setPlataforma('')
+    setImagem('')
+    setRank('')
   };
 
   return (
@@ -36,13 +38,13 @@ const Formulario = (props) => {
           valor={nick}
           aoAlterado={(valor) => setNick(valor)}
         />
-        <ListaSuspensa
-          obrigatorio={true}
-          label="Plataforma"
-          itens={plataforma}
-          valor={plataformas}
-          aoAlterado={(valor) => setPlataformas(valor)}
-        />
+          <ListaSuspensa
+            obrigatorio={true}
+            label="Plataforma"
+            itens={plataformaOpcoes}
+            valor={plataforma}
+            aoAlterado={(valor) => setPlataforma(valor)}
+          />
         <CampoTexto
           obrigatorio={true}
           label="Imagem"
