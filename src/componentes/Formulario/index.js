@@ -6,30 +6,7 @@ import "./Formulario.css";
 
 const Formulario = (props) => {
 
-  const ranking = [
-    "Bronze I",
-    "Bronze II",
-    "Bronze III",
-    "Prata I",
-    "Prata II",
-    "Prata III",
-    "Ouro I",
-    "Ouro II",
-    "Ouro III",
-    "Platina I",
-    "Platina II",
-    "Platina III",
-    "Diamante I",
-    "Diamante II",
-    "Diamante III",
-    "Champion I",
-    "Champion II",
-    "Champion III",
-    "Grand Champion I",
-    "Grand Champion II",
-    "Grand Champion III",
-    "FUCKIN SSL",
-  ];
+
 
   const plataforma = ["PS4 / PS5", "PC", "Xbox", "Nintendo"];
 
@@ -76,7 +53,7 @@ const Formulario = (props) => {
         <ListaSuspensa
           obrigatorio={true}
           label="Rank"
-          itens={ranking}
+          itens={props.ranking}
           valor={rank}
           aoAlterado={(valor) => setRank(valor)}
         />
